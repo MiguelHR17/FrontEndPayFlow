@@ -1,1 +1,22 @@
-// app global css in SCSS form
+:root {
+  --color-primary-dark: #0a234b;
+  --color-primary-medium: #004b8d;
+  --color-btn: #004b8d;
+}
+
+.q-input,
+.q-select,
+.q-field {
+  background-color: #f4f4f4;
+  border-radius: 6px;
+}
+
+.q-btn {
+  background-color: var(--color-btn);
+  color: white;
+  font-weight: bold;
+}
+
+.q-btn:hover {
+  background-color: #00376c;
+}

@@ -1,11 +1,24 @@
 const routes = [
   {
     path: '/',
+    redirect: '/login', // Redirección al login por defecto
+  },
+  {
+    path: '/',
     component: () => import('layouts/AuthLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/LoginPage.vue') },
-      { path: 'registro', component: () => import('pages/RegistroPage.vue') },
-      { path: 'logout', component: () => import('pages/LogoutPage.vue') },
+      {
+        path: 'login',
+        component: () => import('pages/LoginPage.vue'),
+      },
+      {
+        path: 'registro',
+        component: () => import('pages/RegistroPage.vue'),
+      },
+      {
+        path: 'logout',
+        component: () => import('pages/LogoutPage.vue'),
+      },
     ],
   },
   {
@@ -35,6 +48,10 @@ const routes = [
         component: () => import('pages/ValidacionAutomaticaPage.vue'),
       },
     ],
+  },
+  {
+    path: '/:catchAll(.*)*',
+    component: () => import('pages/ErrorNotFound.vue'), // Ruta 404
   },
 ]
 
